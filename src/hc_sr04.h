@@ -7,6 +7,7 @@
 
 #include <stdint.h>
 
+typedef uint8_t u8;
 typedef uint16_t u16;
 
 /**
@@ -14,6 +15,8 @@ typedef uint16_t u16;
  * Keeps track of the TRIG and ECHO pins.
  */
 typedef struct HCSR04_Sensor {
+    volatile u8 *trig_port;
+    volatile u8 *echo_port;
     u16 pin_trig;
     u16 pin_echo;
 } HCSR04_Sensor;
